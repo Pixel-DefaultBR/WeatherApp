@@ -8,44 +8,36 @@ using WeatherApp.Services;
 public class WeatherForecast: IWeatherForecast
 {
     private readonly HttpClient _httpClient;
+    private readonly WeatherForecastService _weatherForecastService;
+
     public WeatherForecast()
     {
         _httpClient = new HttpClient();
+        _weatherForecastService = new WeatherForecastService();
     }
     public async Task<WeatherForecastModel> GetWeatherForecastByCurrentLocation(string lat, string lon)
     {
-        var api = new WeatherForecastService();
-        var weatherForecastAtCurrentLocation = await api.GetApiResponseMetNoAsync(lat, lon);
-        Console.WriteLine($"[met.no] Temp: {weatherForecastAtCurrentLocation.Temperature}°C - Umidade: {weatherForecastAtCurrentLocation.Humidity}%");
+        var weatherForecastAtCurrentLocation = await _weatherForecastService.GetApiResponseMetNoAsync(lat, lon);
         
         return weatherForecastAtCurrentLocation;
     }
     public async Task<WeatherForecastModel> GetWeatherForecastByCity(string city)
     {
-        var api = new WeatherForecastService();
-
-        var weatherForecastAtCity = await api.GetApiResponseWttrAsync(city);
-        Console.WriteLine($"[wttr.in] Temp: {weatherForecastAtCity.Temperature}°C - {weatherForecastAtCity.Description} - Umidade: {weatherForecastAtCity.Humidity}%");
+        var weatherForecastAtCity = await _weatherForecastService.GetApiResponseWttrAsync(city);
 
         return weatherForecastAtCity;
 
     }
     public async Task<WeatherForecastModel> GetWeatherForecastByState(string state)
     {
-        var api = new WeatherForecastService();
+        var weatherForecastAtState = await _weatherForecastService.GetApiResponseWttrAsync(state);
 
-        var weatherForecastAtState = await api.GetApiResponseWttrAsync(state);
-        Console.WriteLine($"[wttr.in] Temp: {weatherForecastAtState.Temperature}°C - {weatherForecastAtState.Description} - Umidade: {weatherForecastAtState.Humidity}%");
-        
         return weatherForecastAtState;
     }
     public async Task<WeatherForecastModel> GetWeatherForecastByCountry(string country)
     {
-        var api = new WeatherForecastService();
+        var weatherForecastAtCountry = await _weatherForecastService.GetApiResponseWttrAsync(country);
 
-        var weatherForecastAtCountry = await api.GetApiResponseWttrAsync(country);
-        Console.WriteLine($"[wttr.in] Temp: {weatherForecastAtCountry.Temperature}°C - {weatherForecastAtCountry.Description} - Umidade: {weatherForecastAtCountry.Humidity}%");
-        
         return weatherForecastAtCountry;
     }
 }

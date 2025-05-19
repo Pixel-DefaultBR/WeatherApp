@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xSBZNv79YJg=",
+  "dgSpecHash": "g7n8XdWkysc=",
   "success": true,
-  "projectFilePath": "/home/pixel/Programing/C#/WeatherApp/WeatherApp.csproj",
+  "projectFilePath": "C:\\Users\\pixel\\Desktop\\WeatherApp-20250519T204738Z-1-001\\WeatherApp\\WeatherApp.csproj",
   "expectedPackageFiles": [
-    "/home/pixel/.nuget/packages/system.io.pipelines/9.0.5/system.io.pipelines.9.0.5.nupkg.sha512",
-    "/home/pixel/.nuget/packages/system.text.encodings.web/9.0.5/system.text.encodings.web.9.0.5.nupkg.sha512",
-    "/home/pixel/.nuget/packages/system.text.json/9.0.5/system.text.json.9.0.5.nupkg.sha512"
+    "C:\\Users\\pixel\\.nuget\\packages\\system.io.pipelines\\9.0.5\\system.io.pipelines.9.0.5.nupkg.sha512",
+    "C:\\Users\\pixel\\.nuget\\packages\\system.text.encodings.web\\9.0.5\\system.text.encodings.web.9.0.5.nupkg.sha512",
+    "C:\\Users\\pixel\\.nuget\\packages\\system.text.json\\9.0.5\\system.text.json.9.0.5.nupkg.sha512"
   ],
   "logs": []
 }
